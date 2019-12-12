@@ -1,0 +1,22 @@
+{
+  "name": "bch-regtest",
+  "description": "BCH regtest",
+  "author": "Michael Lee <me@michaelkk.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/michaeleekk/bch-regtest.git"
+  },
+  "scripts": {
+    "test": "tape tests/*.js",
+    "start-network": "docker-compose up"
+  },
+  "engines": {
+    "node": ">=10.15.3"
+  },
+  "dependencies": {
+    "bitbox-sdk": "^8.11.1"
+  },
+  "devDependencies": {
+    "tape": "^4.11.0"
+  }
+}

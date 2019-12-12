@@ -1,0 +1,24 @@
+{
+    "network": "regtest",
+    "port": 3001,
+    "services": [
+        "web",
+        "insight-api",
+        "insight-ui",
+        "bitcoind"
+    ],
+    "servicesConfig": {
+	 "insight-api": {
+	     "routePrefix": "api"
+	 },
+	 "block": {
+	     "readAheadBlockCount": 1
+	 },
+         "bitcoind": {
+             "spawn": {
+                 "datadir": "/src/mynode/data",
+                 "exec": "/src/mynode/node_modules/bitcore-node/bin/bitcoind"
+             }
+         }
+    }
+}

@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+        # bitcoind:
+        #   image: "zquestz/bitcoin-abc:latest"
+        #   command: "bitcoind -rest -regtest -rpcuser=user -rpcpassword=password -printtoconsole -server -rpcallowip=0.0.0.0/0 -rpcbind=0.0.0.0"
+  rest:
+    container_name: rest
+    build: ./rest.bitcoin.com
+    depends_on:
+      - insight
+    networks:
+      - bitcoin
+    ports:
+      - "3000:3000"
+  insight:
+    build: ./insight-api
+    networks:
+      - bitcoin
+ 
+networks:
+    bitcoin:
+        name: bitcoin
