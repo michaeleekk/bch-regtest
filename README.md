@@ -1,8 +1,8 @@
-## BCH Regtest
+## BCH Regtest with Docker
 
-This repository is trying to 
+This repository uses Docker for containing the Bitcoin Cash test environment.
 
-# Pre-requsities
+# Pre-requisities
 
 * [Docker](https://www.docker.com/)
 
