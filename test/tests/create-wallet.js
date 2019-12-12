@@ -54,7 +54,7 @@ for (let i = 0; i < 10; i++) {
   // Save the first seed address for use in the .json output file.
   if (i === 0) {
     outObj.cashAddress = bitbox.HDNode.toCashAddress(childNode, true)
-    outObj.legacyAddress = bitbox.HDNode.toLegacyAddress(childNode, true)
+    outObj.legacyAddress = bitbox.HDNode.toLegacyAddress(childNode)
     outObj.WIF = bitbox.HDNode.toWIF(childNode)
   }
 }

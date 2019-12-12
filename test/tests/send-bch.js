@@ -50,8 +50,8 @@ async function sendBch() {
       process.exit(1)
     }
 
-    const SEND_ADDR_LEGACY = bitbox.Address.toLegacyAddress(SEND_ADDR, true)
-    const RECV_ADDR_LEGACY = bitbox.Address.toLegacyAddress(RECV_ADDR, true)
+    const SEND_ADDR_LEGACY = bitbox.Address.toLegacyAddress(SEND_ADDR)
+    const RECV_ADDR_LEGACY = bitbox.Address.toLegacyAddress(RECV_ADDR)
     console.log(`Sender Legacy Address: ${SEND_ADDR_LEGACY}`)
     console.log(`Receiver Legacy Address: ${RECV_ADDR_LEGACY}`)
 

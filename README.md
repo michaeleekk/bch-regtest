@@ -32,4 +32,5 @@ docker-compose up
   * Workaround [here](rest.bitcoin.com/route-utils.js) by simply always returning true in any cases.
 * The original [start-app.sh]() inside [the Insight docker image](https://github.com/christroutner/insight-docker/blob/master/start-app.sh#L22) has a `sleep 10` command. Possibly work without ?
   * Workaround [here](insight-api/start-app.sh) by commenting away the sleep command.
-
+* The [bitbox.HDNode.toCashAddress(hdNode, regtest)](https://github.com/Bitcoin-com/bitbox-sdk/blob/master/lib/HDNode.ts#L36) has the second parameter for generating RegTest addresses.
+  * One of the edited places is [here](test/tests/create-wallet.js#L51)
