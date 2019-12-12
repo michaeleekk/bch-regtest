@@ -14,15 +14,16 @@ RUN git clone https://github.com/bitcoin-com/rest.bitcoin.com \
   && npm run build
 
 # COPY bitcoin.conf .
+COPY route-utils.js /src/rest.bitcoin.com/src/routes/v2/route-utils.js
 
 # On rest.bitcoin.com this env var is to our internal insight API. You can use insight's public API.
-ENV BITCOINCOM_BASEURL=http://insight:3000/api/
-ENV RPC_BASEURL=http://insight:8332/
-ENV RPC_PASSWORD=regtest
-ENV RPC_USERNAME=regtest
+ENV BITCOINCOM_BASEURL=http://insight:3001/api/
+ENV RPC_BASEURL=http://insight:18443/
+ENV RPC_PASSWORD=docker321
+ENV RPC_USERNAME=bitcoincash
 ENV ZEROMQ_PORT=28332
 ENV ZEROMQ_URL=insight
-ENV NETWORK=local
+ENV NETWORK=regtest
 
 WORKDIR /src/rest.bitcoin.com
 

@@ -59,6 +59,8 @@ for (let i = 0; i < 10; i++) {
   }
 }
 
+console.log(outObj)
+
 // Write the extended wallet information into a text file.
 fs.writeFile("wallet-info.txt", outStr, function(err) {
   if (err) return console.error(err)

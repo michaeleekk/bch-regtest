@@ -1,8 +1,5 @@
 version: '3.7'
 services:
-        # bitcoind:
-        #   image: "zquestz/bitcoin-abc:latest"
-        #   command: "bitcoind -rest -regtest -rpcuser=user -rpcpassword=password -printtoconsole -server -rpcallowip=0.0.0.0/0 -rpcbind=0.0.0.0"
   rest:
     container_name: rest
     build: ./rest.bitcoin.com
@@ -13,9 +10,15 @@ services:
     ports:
       - "3000:3000"
   insight:
-    build: ./insight-api
+    image: christroutner/insight-bch-0.20.4
+    command: ./start-app.sh
     networks:
       - bitcoin
+    volumes:
+      - ./insight-api/start-app.sh:/home/insight/start-app.sh
+      - ./blockchain-data:/home/insight/blockchain-data
+      - ./insight-api/bitcoin.conf:/home/insight/.bitcoin/bitcoin.conf
+      - ./insight-api/bitcore-node.json:/home/insight/.bitcore/bitcore-node.json
  
 networks:
     bitcoin:

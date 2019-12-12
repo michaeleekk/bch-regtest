@@ -2,23 +2,25 @@
     "network": "regtest",
     "port": 3001,
     "services": [
-        "web",
+        "bitcoind",
         "insight-api",
         "insight-ui",
-        "bitcoind"
+        "web"
     ],
     "servicesConfig": {
-	 "insight-api": {
-	     "routePrefix": "api"
-	 },
-	 "block": {
-	     "readAheadBlockCount": 1
-	 },
-         "bitcoind": {
-             "spawn": {
-                 "datadir": "/src/mynode/data",
-                 "exec": "/src/mynode/node_modules/bitcore-node/bin/bitcoind"
-             }
-         }
+        "insight-ui": {
+            "routePrefix": "",
+            "apiPrefix": "api"
+        },
+        "insight-api": {
+            "routePrefix": "api",
+            "disableRateLimiter": true
+        },
+        "bitcoind": {
+            "spawn": {
+                "datadir": "/home/insight/blockchain-data",
+                "exec": "/home/insight/bitcore-abc/src/bitcoind"
+            }
+        }
     }
 }
